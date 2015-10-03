@@ -29,11 +29,7 @@ after_script:
 notifications:
   email:
     on_success: always
-    on_failure: never
-    recipients:
-      - aidan@shippable.com
+    recipients: aidan@shippable.com
   irc:
-    pull_requests: true
-    channels:
-      - localhost#channel1
-      - localhost#channel2
+    - localhost#channel1
+    - localhost#channel2
