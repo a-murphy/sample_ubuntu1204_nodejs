@@ -27,6 +27,4 @@ after_script:
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
   
 notifications:
-  email:
-    - aidan@shippable.com
-  irc: localhost#channel
+  email: aidan@shippable.com
