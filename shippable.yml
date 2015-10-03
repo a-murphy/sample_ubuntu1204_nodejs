@@ -28,8 +28,5 @@ after_script:
   
 notifications:
   email:
-    on_success: always
-    recipients: aidan@shippable.com
-  irc:
-    - localhost#channel1
-    - localhost#channel2
+    - aidan@shippable.com
+  irc: localhost#channel
