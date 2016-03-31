@@ -16,6 +16,7 @@ before_install:
 
 # Running the tests with grunt
 script:
+  - apt-get install memtester
   - memtester 2203
   - free -m
   - npm run test 
