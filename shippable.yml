@@ -16,8 +16,8 @@ before_install:
 
 # Running the tests with grunt
 script:
-  - apt-get install memtester
-  - memtester 2203
+  - apt-get install stress
+  - stress --vm-bytes $(awk '/MemFree/{printf "%d\n", $2 * 0.95;}' < /proc/meminfo)k --vm-keep -m 1
   - free -m
   - npm run test 
 
