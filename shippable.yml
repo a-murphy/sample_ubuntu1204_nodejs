@@ -17,7 +17,7 @@ before_install:
 # Running the tests with grunt
 script:
   - apt-get install stress
-  - stress --vm-bytes $(awk '/MemFree/{printf "%d\n", $2 * 0.95;}' < /proc/meminfo)k --vm-keep -m 1
+  - stress --vm-bytes $(awk '/MemFree/{printf "%d\n", $2 * 0.95;}' < /proc/meminfo)k --vm-keep -t 60 --backoff 500 -m 1
   - free -m
   - npm run test 
 
