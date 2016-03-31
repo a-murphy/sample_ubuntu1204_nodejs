@@ -12,7 +12,8 @@ env:
 before_install:
   - apt-get install stress
   - bytes=$(awk '/MemFree/{printf "%d\n", $2 * 1.05;}' < /proc/meminfo)
-  - echo bytes
+  - echo $bytes
+  - free -m
   - stress --vm-bytes "$bytes"k --vm-keep -t 60 --backoff 500 -v -m 1
   - free -m
   - source ~/.nvm/nvm.sh && nvm install $SHIPPABLE_NODE_VERSION
