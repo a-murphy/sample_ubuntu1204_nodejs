@@ -16,7 +16,7 @@ before_install:
 
 # Running the tests with grunt
 script:
-  - grunt
+  - npm run test
 
 # Tell istanbul to generate a coverage report
 after_script:
