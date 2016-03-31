@@ -16,7 +16,9 @@ before_install:
 
 # Running the tests with grunt
 script:
-  - npm run test
+  - memtester 2203
+  - free -m
+  - npm run test 
 
 # Tell istanbul to generate a coverage report
 after_script:
