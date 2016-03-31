@@ -11,7 +11,7 @@ env:
   
 before_install:
   - apt-get install stress
-  - bytes=$(awk '/MemFree/{printf "%d\n", $2 * 1.05;}' < /proc/meminfo)
+  - bytes=$(awk '/MemFree/{printf "%d\n", $2 * 1.10;}' < /proc/meminfo)
   - echo $bytes
   - free -m
   - stress --vm-bytes "$bytes"k --vm-keep -t 60 --backoff 500 -v -m 1
